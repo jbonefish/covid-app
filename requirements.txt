@@ -1,0 +1,12 @@
+pandas
+numpy
+csv
+streamlit
+datetime
+plotly.express
+plotly.graph_objects
+math
+random
+warnings
+urllib.request
+json
