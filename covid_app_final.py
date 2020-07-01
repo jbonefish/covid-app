@@ -12,14 +12,21 @@ import matplotlib.pyplot as plt
 import math
 import random
 
+import certifi
+import ssl
+
 import warnings
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # for county level chlorpleth plotly.express maps
-from urllib.request import urlopen
 import json
-with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json') as response:
+
+from urllib.request import urlopen
+with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json', context=ssl.create_default_context(cafile=certifi.where())) as response:
     counties = json.load(response)
+#import urllib.request as urlrq
+#response = urlrq.urlopen('https://github.com/plotly/datasets/blob/master/geojson-counties-fips.json', context=ssl.create_default_context(cafile=certifi.where()))
+#counties = json.load(response)
 
 # reference
 folder = '~/Documents/county_data/'
