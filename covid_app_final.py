@@ -361,7 +361,7 @@ def region_grapher(df):
     hm1_df = region_data.sort_values(by=['region','date'])
     hm1_df = hm1_df[hm1_df['date'].isin(dates_to_use)]
     hm1_df['change'] = hm1_df[metric_input].diff()
-    hm1_df['percent_chg'] = (hm1_df[metric_input] - hm1_df[metric_input].shift(1))/hm1_df[metric_input].shift(1)*100
+    hm1_df['change_pct'] = (hm1_df[metric_input] - hm1_df[metric_input].shift(1))/hm1_df[metric_input].shift(1)*100
     hm1_df['same_as_prev'] = hm1_df['region'].shift(1) == hm1_df['region']
     hm1_df = hm1_df[hm1_df['same_as_prev'] == True]
 
@@ -648,7 +648,7 @@ def state_grapher(df):
     hm1_df = state_data.sort_values(by=['state','date'])
     hm1_df = hm1_df[hm1_df['date'].isin(dates_to_use)]
     hm1_df['change'] = hm1_df[metric_input].diff()
-    hm1_df['percent_chg'] = (hm1_df[metric_input] - hm1_df[metric_input].shift(1))/hm1_df[metric_input].shift(1)*100
+    hm1_df['change_pct'] = (hm1_df[metric_input] - hm1_df[metric_input].shift(1))/hm1_df[metric_input].shift(1)*100
     hm1_df['same_as_prev'] = hm1_df['state'].shift(1) == hm1_df['state']
     hm1_df = hm1_df[hm1_df['same_as_prev'] == True]
 
@@ -939,7 +939,7 @@ def metro_grapher(df):
     hm1_df = metro_area_data.sort_values(by=['metro_area','date'])
     hm1_df = hm1_df[hm1_df['date'].isin(dates_to_use)]
     hm1_df['change'] = hm1_df[metric_input].diff()
-    hm1_df['percent_chg'] = (hm1_df[metric_input] - hm1_df[metric_input].shift(1))/hm1_df[metric_input].shift(1)*100
+    hm1_df['change_pct'] = (hm1_df[metric_input] - hm1_df[metric_input].shift(1))/hm1_df[metric_input].shift(1)*100
     hm1_df['same_as_prev'] = hm1_df['metro_area'].shift(1) == hm1_df['metro_area']
     hm1_df = hm1_df[hm1_df['same_as_prev'] == True]
 
@@ -1234,7 +1234,7 @@ def county_grapher(df):
     hm1_df = county_data.sort_values(by=['county_st','date'])
     hm1_df = hm1_df[hm1_df['date'].isin(dates_to_use)]
     hm1_df['change'] = hm1_df[metric_input].diff()
-    hm1_df['percent_chg'] = (hm1_df[metric_input] - hm1_df[metric_input].shift(1))/hm1_df[metric_input].shift(1)*100
+    hm1_df['change_pct'] = (hm1_df[metric_input] - hm1_df[metric_input].shift(1))/hm1_df[metric_input].shift(1)*100
     hm1_df['same_as_prev'] = hm1_df['county_st'].shift(1) == hm1_df['county_st']
     hm1_df = hm1_df[hm1_df['same_as_prev'] == True]
 
