@@ -20,11 +20,16 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # for county level chlorpleth plotly.express maps
 import json
+import urllib
 
-from urllib.request import urlopen
-with urlopen('https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json', context=ssl.create_default_context(cafile=certifi.where())) as response:
-    counties = json.load(response)
-#import urllib.request as urlrq
+fips_url = 'https://raw.githubusercontent.com/plotly/datasets/master/geojson-counties-fips.json'
+
+response = urllib.request.urlopen(fips_url)
+
+counties = json.loads(response.read())
+# , context=ssl.create_default_context(cafile=certifi.where())
+
+#
 #response = urlrq.urlopen('https://github.com/plotly/datasets/blob/master/geojson-counties-fips.json', context=ssl.create_default_context(cafile=certifi.where()))
 #counties = json.load(response)
 
@@ -996,7 +1001,7 @@ def metro_grapher(df):
             a = dist_col[k][0]
             dist_list.append(a)
 
-        addl_state_input = dist_list[:no_scatter]
+        addl_metro_input = dist_list[:no_scatter]
 
         hm1_df = hm1_df[(hm1_df['metro_area'].isin(addl_metro_input)) | (hm1_df['metro_area'].isin(metro_input))]
 
