@@ -1,5 +1,4 @@
 altair==4.1.0
-appnope==0.1.0
 astor==0.8.1
 attrs==19.3.0
 backcall==0.2.0
@@ -13,14 +12,12 @@ certifi==2020.6.20
 chardet==3.0.4
 click==7.1.2
 cycler==0.10.0
-DateTime==4.3
 decorator==4.4.2
 defusedxml==0.6.0
 docutils==0.15.2
 entrypoints==0.3
 enum-compat==0.0.3
 idna==2.10
-importlib-metadata==1.7.0
 ipykernel==5.3.0
 ipython==7.16.1
 ipython-genutils==0.2.0
@@ -54,7 +51,7 @@ prometheus-client==0.8.0
 prompt-toolkit==3.0.5
 protobuf==3.12.2
 ptyprocess==0.6.0
-pydeck==0.3.1
+pydeck==0.4.0b2
 Pygments==2.6.1
 pyparsing==2.4.7
 pyrsistent==0.16.0
@@ -83,5 +80,3 @@ wcwidth==0.2.5
 webencodings==0.5.1
 widgetsnbextension==3.5.1
 xlrd==1.2.0
-zipp==3.1.0
-zope.interface==5.1.0
